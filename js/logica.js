@@ -1,6 +1,4 @@
 // 1. Selecionando os elementos
-        const input = document.getElementById('input');
-        const botao = document.getElementById('button');
         const listaEL = document.getElementById('list');
 
         // 2. O ESTADO (A fonte da verdade)
@@ -23,7 +21,7 @@
             });
         }
 
-        function adicionarTarefa() {
+        function adicionarTarefa(input) {
             const texto = input.value.trim();
             if (texto !== "") {
                 tarefas.push(texto); // Adiciona ao array
@@ -36,12 +34,5 @@
             tarefas.splice(posicao, 1); // Remove do array pela posição
             renderizarTarefas();        // Atualiza a tela
         }
-
-        botao.addEventListener('click', adicionarTarefa);
-
-        // Dica extra: Adicionar tarefa ao apertar "Enter"
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') adicionarTarefa();
-        });
 
 export { renderizarTarefas, adicionarTarefa, removerTarefa };
